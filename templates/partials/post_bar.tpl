@@ -17,6 +17,18 @@
 				<a class="btn-ghost-sm d-none d-lg-flex align-self-stretch" target="_blank" href="{rssFeedUrl}" title="[[global:rss-feed]]"><i class="fa fa-rss text-primary"></i></a>
 				{{{ end }}}
 
+				{{{ if claimerUid }}}
+					<span class="btn-ghost-sm d-none d-lg-flex align-self-stretch text-muted" title="Claimed by {claimerUsername}">
+						<i class="fa fa-check-circle text-success"></i>
+						<span class="d-none d-md-inline fw-semibold">Claimed by {claimerUsername}</span>
+					</span>
+				{{{ else }}}
+					<a href="#" class="btn-ghost-sm d-none d-lg-flex align-self-stretch" component="topic/claim" data-tid="{tid}" title="Claim Topic">
+						<i class="fa fa-hand-paper-o text-primary"></i>
+						<span class="d-none d-md-inline fw-semibold">Claim this topic</span>
+					</a>
+				{{{ end }}}
+
 				{{{ if browsingUsers }}}
 				<div class="hidden-xs"><!-- IMPORT partials/topic/browsing-users.tpl --></div>
 				{{{ end }}}
